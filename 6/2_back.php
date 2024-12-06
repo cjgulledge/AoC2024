@@ -66,10 +66,9 @@ while (1==1) {
             //direction doesn't change. 
 	    //
 	    //
-	    if ($pos[1]< strlen($grid[$pos[0]])) {	
-	    //$grid[$pos[0]][$pos[1]] ='X' ;
-            }
-	//print_r($grid);
+	    $grid[$pos[0]][$pos[1]] = printTrack($go);
+	print_r($grid);
+die;
            $iterations++; 
            //$spotsTouched[strval($pos[0].$pos[1])] = 1;
 	   if (isset( $spotsTouched[strval(strval($pos[0]).".".strval($pos[1]))])) {
@@ -79,7 +78,9 @@ while (1==1) {
 	   }
 	   if ($spotsTouched[strval(strval($pos[0]).".".strval($pos[1]))] ==10) {
 //		  print "we have been here before\n";
+		   print_r($grid);
 		                                       print "found a loop at ". $pos[0]." ". $pos[1]."\n";
+die;
                    //print_r($spotsTouched); 
                   $infiniteLoopPositions++;
                   break;
