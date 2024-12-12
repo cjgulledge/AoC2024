@@ -241,7 +241,7 @@ function perimeter2($region) {
     foreach ($region as $key => $val) {
         list($x, $y) = explode(",", $key);
         $x = (int)$x; $y = (int)$y;
-        // The neighbors and the additional checks done in Python:
+        // The neighbors and the additional checks 
         // For each direction, we also check (x1,y1) and (x2,y2)
         $checks = [
             [$x+1, $y, $x, $y-1, $x+1, $y-1],
@@ -253,7 +253,6 @@ function perimeter2($region) {
             $in_nxy = isset($region["$nx,$ny"]);
             $in_x1y1 = isset($region["$x1,$y1"]);
             $in_x2y2 = isset($region["$x2,$y2"]);
-            // The Python condition:
             // if (nx,ny) not in region and not ((x1,y1) in region and (x2,y2) not in region):
             if (!$in_nxy && !( $in_x1y1 && !$in_x2y2 )) {
                 $n += 1;
